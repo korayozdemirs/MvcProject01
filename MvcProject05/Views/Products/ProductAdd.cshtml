@@ -1,0 +1,31 @@
+﻿@model MvcProject05.Models.Product
+@{
+    ViewBag.Title = "ProductAdd";
+}
+
+<h2>ProductAdd</h2>
+
+<form action="/Products/ProductAdd" method="post">
+    @Html.ValidationSummary()
+    <div class="form-group">
+        <label>Product Name</label>
+        @Html.TextBoxFor(z => z.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Price</label>
+        @Html.TextBoxFor(z => z.Price, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>UnistInStock</label>
+        @Html.TextBoxFor(z => z.UnistInStock, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        <label>Ready</label>
+        @Html.EditorFor(z => z.Ready, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>
+

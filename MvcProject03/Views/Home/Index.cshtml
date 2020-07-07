@@ -1,0 +1,73 @@
+﻿@model MvcProject03.Models.Student
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.TextBox("StudentName", null, new { @class = "form-control" })
+
+@Html.TextBoxFor(z => z.StudentName, new { @class = "form-control" })
+
+
+@Html.TextArea("Description", null, new { @class = "form-control" })
+
+@Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
+
+<br />
+<br />
+
+@Html.CheckBox("isNewlyEnrolled", true)
+
+@Html.CheckBoxFor(m => m.isNewlyEnrolled)
+
+<br />
+
+Male:   @Html.RadioButton("Gender", "Male")
+Female: @Html.RadioButton("Gender", "Female")
+
+@*@Html.RadioButtonFor(m => m.Gender, "Male")
+    @Html.RadioButtonFor(m => m.Gender, "Female")*@
+
+@Html.DropDownList("StudentGender", new SelectList(Enum.GetValues(typeof(MvcProject03.Models.Gender))), "Select Gender",
+    new { @class = "form-control" })
+
+@Html.DropDownListFor(m => m.StudentGender,
+                    new SelectList(Enum.GetValues(typeof(MvcProject03.Models.Gender))),
+                    "Select Gender")
+<br />
+
+
+@Html.Hidden("StudentId")
+@Html.HiddenFor(m => m.StudentId)
+<br />
+<br />
+
+@Html.Password("Password")
+@Html.PasswordFor(m => m.Password)
+<br />
+<br />
+
+@Html.Label("StudentName")
+@Html.Label("StudentName", "Student-Name")
+@Html.LabelFor(m => m.StudentName)
+
+<br />
+<br />
+
+StudentId:      @Html.Editor("StudentId")
+Student Name:   @Html.Editor("StudentName")
+Age:            @Html.Editor("Age")
+Password:       @Html.Editor("Password")
+isNewlyEnrolled: @Html.Editor("isNewlyEnrolled")
+Gender:         @Html.Editor("Gender")
+DoB:            @Html.Editor("DoB")
+
+
+@*<input class="form-control"
+    id="StudentName"
+    name="StudentName"
+    type="text"
+    value="" />*@
+

@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<label>Total Students:</label> : @ViewBag.TotalStudents
+<label>En böyük Students:</label> : @TempData["students"]
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">StudentID</th>
+            <th scope="col">StudentName</th>
+            <th scope="col">Age</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var std in ViewData["students"] as IList<MvcProject06.Models.Student>)
+        {
+            <tr>
+                <th scope="row">@std.StudentID</th>
+                <td>@std.StudentName</td>
+                <td>@std.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>
